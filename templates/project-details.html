@@ -1,0 +1,158 @@
+    
+    {% extends "base.html" %}
+    {% load static %} 
+    {% block content %}
+    <!-- Breadcrumb Area Start -->
+    <div class="breadcrumb-area breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-inner text-center">
+                        <h1 class="title split-collab">Project Details</h1>
+                        <ul class="page-list">
+                            <li class="tmp-breadcrumb-item"><a href="http://themes-park.net/">Home</a></li>
+                            <li class="icon"><i class="fa-solid fa-angle-right"></i></li>
+                            <li class="tmp-breadcrumb-item active">Project Details</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Area End -->
+
+
+    <div class="project-details-area-wrapper tmp-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="project-details-thumnail-wrap">
+                        <img src="{% static 'images/projects-details/thumnail-img.png' %}" alt="thumbnail">
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="project-details-content-wrap">
+                        <h2 class="title">Self Hosted Mini Media Server</h2>
+                        <p class="docs">Self Hosted Mini Media Server is a lightweight, self-hosted media management solution built with Python and FastAPI. It empowers users to host, organize, and share media files directly from their local machine. With a user-friendly web interface, users can browse media categories, generate direct links for sharing, and manage content efficiently.</p>
+                        <p class="docs">The project leverages modern web technologies to ensure seamless media browsing and efficient organization of content, while providing a simple, yet powerful, local server alternative for media sharing.</p>
+                
+                        <div class="check-box-wrap">
+                            <ul>
+                                <li>
+                                    <h4 class="check-box-item"><span><i class="fa-solid fa-circle-check"></i></span>Self-Hosted Media Management</h4>
+                                </li>
+                                <li>
+                                    <h4 class="check-box-item"><span><i class="fa-solid fa-circle-check"></i></span>Category Organization</h4>
+                                </li>
+                                <li>
+                                    <h4 class="check-box-item"><span><i class="fa-solid fa-circle-check"></i></span>Direct Link Generation</h4>
+                                </li>
+                            </ul>
+                        </div>
+                
+                        <h2 class="mini-title">Key Features of Self Hosted Mini Media Server</h2>
+                        <p class="docs">Efficient media management and sharing with a responsive web interface. Organize your media in structured categories such as Foods, Inventory, and more. Generate direct links for easy sharing.</p>
+                
+                        <div class="project-details-swiper-wrapper">
+                            <div class="swiper project-details-swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="project-details-img">
+                                            <img src="{% static 'images/projects-details/media-server-img-1.jpg' %}" alt="media-server-img">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="project-details-img">
+                                            <img src="{% static 'images/projects-details/media-server-img-2.jpg' %}" alt="media-server-img">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-details-swiper-btn">
+                                <div class="project-swiper-button-prev"><span><i class="fa-solid fa-arrow-left"></i></span>Previous</div>
+                                <div class="project-swiper-button-next">Next <span><i class="fa-solid fa-arrow-right"></i></span></div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Contact Area Start -->
+                    <section class="get-in-touch-area pt--80">
+                        <div class="container p-0">
+                            <div class="contact-get-in-touch-wrap">
+                                <div class="get-in-touch-wrapper tmponhover">
+                                    <div class="row g-5 align-items-center">
+                                        <div class="col-lg-12">
+                                            <div class="contact-inner">
+                                                <div class="contact-form">
+                                                    <form class="tmp-dynamic-form" id="contact-form" method="POST" action="mailto:your-email@example.com">
+                                                        <div class="contact-form-wrapper row">
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <input class="input-field" name="contact-name" id="contact-name" placeholder="Your Name" type="text" required="">
+                                                                </div>
+                                                            </div>
+                
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <input class="input-field" name="contact-phone" id="contact-phone" placeholder="Phone Number" type="number" required="">
+                                                                </div>
+                                                            </div>
+                
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <input class="input-field" id="contact-email" name="contact-email" placeholder="Your Email" type="text">
+                                                                </div>
+                                                            </div>
+                
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <input class="input-field" type="text" id="subject" name="subject" placeholder="Subject">
+                                                                </div>
+                                                            </div>
+                
+                                                            <div class="col-lg-12">
+                                                                <div class="form-group">
+                                                                    <textarea class="input-field" placeholder="Your Message" name="contact-message" id="contact-message"></textarea>
+                                                                </div>
+                                                            </div>
+                
+                                                            <div class="col-lg-12">
+                                                                <div class="tmp-button-here">
+                                                                    <button class="tmp-btn hover-icon-reverse radius-round w-100" name="submit" type="submit" id="submit">
+                                                                        <span class="icon-reverse-wrapper">
+                                                                            <span class="btn-text">Get In Touch</span>
+                                                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                                                            <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
+                                                                        </span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Contact Area End -->
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="signle-side-bar project-details-area tmponhover">
+                        <div class="header">
+                            <h3 class="title">Project Details</h3>
+                        </div>
+                        <div class="body">
+                            <div class="project-details-info">Project: <span>Self Hosted Mini Media Server</span></div>
+                            <div class="project-details-info">Techstack: <span>Python, FastAPI, jQuery table</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Start Footer Area  -->
+    {% endblock content %}
