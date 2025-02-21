@@ -7,5 +7,8 @@ def index(request):
 def project_details(request):
     return render(request,'project-details.html')
 
+def projects(request):
+    return render(request,'project.html')
+
 def contact(request):
     return render(request,'contact.html')
