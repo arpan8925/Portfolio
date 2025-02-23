@@ -438,117 +438,89 @@
                     <span class="subtitle">Impressing Portfolio</span>
                 </div>
                 <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">My Proud Projects</h2>
-                <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">Highlighting the innovative and impactful projects I’ve worked on, demonstrating my skills and achievements.
+                <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">
+                    Highlighting the innovative and impactful projects I’ve worked on, demonstrating my skills and achievements.
                 </p>
             </div>
+
             <div class="row">
+                {% for project in projects %}
                 <div class="col-lg-6 col-md-6">
-                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <div class="latest-portfolio-card 
+                        {% if forloop.counter|divisibleby:2 %} mt--100 mt_sm--0 mt_md--50 {% endif %} 
+                        tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-{{ forloop.counter }}">
+                        
                         <div class="portfoli-card-img">
                             <div class="img-box v2">
-                                <a href="{% url 'project_details' %}">
-                                    <img class="img-primary hidden-on-mobile" src="{% static 'images/latest-portfolio/portfoli-img-1.jpg' %}" alt="Blog Thumbnail">
-                                    <img class="img-secondary" src="{% static 'images/latest-portfolio/portfoli-img-1.jpg' %}" alt="BLog Thumbnail">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title"><a class="link" href="{% url 'project_details' %}">Self Hosted Mini Media Server</a>
-                                </h3>
-                                <p class="portfoli-card-para">Made using Python FastAPI</p>
-                            </div>
-                            <a href="{% url 'project_details' %}" class="tmp-arrow-icon-btn">
-                                <div class="btn-inner">
-                                    <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
-                                    <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6">
-                    <div class="latest-portfolio-card mt--100 mt_sm--0 mt_md--50 tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a href="project-details.html">
-                                    <img class="img-primary hidden-on-mobile" src="{% static 'images/latest-portfolio/portfoli-img-2.jpg' %}" alt="Blog Thumbnail">
-                                    <img class="img-secondary" src="{% static 'images/latest-portfolio/portfoli-img-2.jpg' %}" alt="BLog Thumbnail">
+                                <a href="{% url 'project_details' slug=project.slug %}">
+                                    <img class="img-primary hidden-on-mobile" src="{{ project.thumbnail_image.url }}" alt="{{ project.title }}">
+                                    <img class="img-secondary" src="{{ project.thumbnail_image.url }}" alt="{{ project.title }}">
                                 </a>
                             </div>
                         </div>
 
                         <div class="portfolio-card-content-wrap">
                             <div class="content-left">
-                                <h3 class="portfolio-card-title"><a class="link" href="project-details.html">My Professional Portfolio
+                                <h3 class="portfolio-card-title">
+                                    <a class="link" href="{% url 'project_details' slug=project.slug %}">{{ project.title }}</a>
                                 </h3>
-                                <p class="portfoli-card-para"> Development Coaches</p>
+                                <p class="portfoli-card-para">{{ project.subtitle }}</p>
                             </div>
-                            <a href="project-details.html" class="tmp-arrow-icon-btn">
+                            <a href="{% url 'project_details' slug=project.slug %}" class="tmp-arrow-icon-btn">
                                 <div class="btn-inner">
                                     <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
                                     <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
                                 </div>
                             </a>
                         </div>
+
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="latest-portfolio-card tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a href="project-details.html">
-                                    <img class="img-primary hidden-on-mobile" src="{% static 'images/latest-portfolio/portfoli-img-3.jpg' %}" alt="Blog Thumbnail">
-                                    <img class="img-secondary" src="{% static 'images/latest-portfolio/portfoli-img-3.jpg' %}" alt="BLog Thumbnail">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title"><a class="link" href="project-details.html">My Portfolio of Innovation</a>
-                                </h3>
-                                <p class="portfoli-card-para">App Development</p>
-                            </div>
-                            <a href="project-details.html" class="tmp-arrow-icon-btn">
-                                <div class="btn-inner">
-                                    <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
-                                    <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
-                                </div>
-                            </a>
-                        </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Tpm Latest Portfolio Area End -->
+</div>
+
+
+<!-- tmp Clients Testimonial Start -->
+<section class="clients-certificates-area tmp-section-gapTop">
+    <div class="section-head mb--50">
+        <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+            <span class="subtitle">Certifications</span>
+        </div>
+        <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Professional Certifications & Accreditations</h2>
+        <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3">Demonstrating a Commitment to Excellence with Industry-Recognized Certifications and Proven Expertise Across Diverse Fields</p>
+    </div>
+    <div class="client-testimonial-swiper position-relative">
+        <div class="swiper testimonial-swiper-v2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide tmp-scroll-trigger animation-order-1">
+                    <div class="client-testimonial-card-wrap">
+                        <img src="{% static 'images/certificates/Python.png' %}" alt="">
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="latest-portfolio-card mt--100 mt_sm--0 mt_md--50 tmp-hover-link tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <div class="portfoli-card-img">
-                            <div class="img-box v2">
-                                <a href="project-details.html">
-                                    <img class="img-primary hidden-on-mobile" src="{% static 'images/latest-portfolio/portfoli-img-4.jpg' %}" alt="Blog Thumbnail">
-                                    <img class="img-secondary" src="{% static 'images/latest-portfolio/portfoli-img-4.jpg' %}" alt="BLog Thumbnail">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-card-content-wrap">
-                            <div class="content-left">
-                                <h3 class="portfolio-card-title"><a class="link" href="project-details.html">A Portfolio of Creativity and Passion</a>
-                                </h3>
-                                <p class="portfoli-card-para">Business Development</p>
-                            </div>
-                            <a href="project-details.html" class="tmp-arrow-icon-btn">
-                                <div class="btn-inner">
-                                    <i class="tmp-icon fa-solid fa-arrow-up-right"></i>
-                                    <i class="tmp-icon-bottom fa-solid fa-arrow-up-right"></i>
-                                </div>
-                            </a>
-                        </div>
+                <div class="swiper-slide tmp-scroll-trigger animation-order-2">
+                    <div class="client-testimonial-card-wrap">
+                        <img src="{% static 'images/certificates/Template_monster.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide tmp-scroll-trigger animation-order-3">
+                    <div class="client-testimonial-card-wrap">
+                        <img src="{% static 'images/certificates/HTML_CSS.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide tmp-scroll-trigger animation-order-4">
+                    <div class="client-testimonial-card-wrap">
+                        <img src="{% static 'images/certificates/NASA_SPACE_APP.png' %}" alt="">
                     </div>
                 </div>
             </div>
         </div>
+        <div class="tmp-swiper-pagination tmp-swiper-pagination-01"></div>
     </div>
-    <!-- Tpm Latest Portfolio Area End --
-</div>
+</section>
 
 
 <!-- tmp Clients Testimonial Start -->

@@ -905,6 +905,11 @@ blockquote b {
   margin: 0;
 }
 
+.clients-testimonial-area {
+  background: #141414;
+}
+
+
 .mr--20 {
   margin-right: 20px;
 }
@@ -16587,12 +16592,12 @@ section.clients-testimonial-area {
 .client-testimonial-swiper .swiper::after {
   background: linear-gradient(90deg, #060606 0%, rgba(6, 6, 6, 0) 100%);
   left: 0;
-  top: 0;
+  top: 120px;
 }
 .client-testimonial-swiper .swiper::before {
   background: linear-gradient(90deg, #060606 0%, rgba(6, 6, 6, 0) 100%);
   right: 0;
-  top: 0;
+  top: 120px;
   z-index: 2;
   transform: rotate(180deg);
 }
@@ -25906,4 +25911,8 @@ body.tmp-white-version.color-primary-3rd .services-widget.v2 .active-bg {
 
 p.client-para {
   cursor: pointer;
+}
+
+.clients-certificates-area {
+  padding-bottom: 100px 
 }

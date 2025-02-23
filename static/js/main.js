@@ -148,7 +148,7 @@
           freeMode: true,
           centeredSlides: true,
           loop: true,
-          autoHeight: true,
+          autoHeight: false,
           loopAddBlankSlides: true,
           pagination: {
             el: ".tmp-swiper-pagination",
@@ -758,5 +758,3 @@ document.addEventListener('DOMContentLoaded', function() {
     removePreloader();
   });
 });
-
-

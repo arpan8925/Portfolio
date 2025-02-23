@@ -32,13 +32,15 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'frontend'
+    'frontend',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
@@ -82,6 +84,9 @@ DATABASES = {
     }
 }
 
+CKEDITOR_CONFIGS = {'default': {
+'removePlugins': 'stylesheetparser',
+'allowedContent': True,},}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
