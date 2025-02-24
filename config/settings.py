@@ -84,9 +84,18 @@ DATABASES = {
     }
 }
 
-CKEDITOR_CONFIGS = {'default': {
-'removePlugins': 'stylesheetparser',
-'allowedContent': True,},}
+CKEDITOR_CONFIGS = {
+    'default': {
+        'allowedContent': True,
+        'contentsCSS': [
+            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+        ],
+        'extraConfig': """
+            CKEDITOR.tools.extend( CKEDITOR.dtd.$removeEmpty, { 'i': 0 }, true );
+            config.protectedSource.push(/<i[^>]*><\/i>/g);
+        """,
+    },
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

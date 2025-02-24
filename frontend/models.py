@@ -15,7 +15,6 @@ class Project(models.Model):
     video_url = models.URLField(blank=True, null=True)
     small_description = RichTextField()
     thumbnail_image = models.ImageField(upload_to='projects/thumbnails/', blank=True, null=True)
-    # The "carousel_images" field is removed as it's now handled by a related model
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_featured = models.BooleanField(default=False)

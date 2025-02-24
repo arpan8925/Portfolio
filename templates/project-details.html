@@ -10,7 +10,7 @@
                     <div class="breadcrumb-inner text-center">
                         <h1 class="title split-collab">Project Details</h1>
                         <ul class="page-list">
-                            <li class="tmp-breadcrumb-item"><a href="http://themes-park.net/">Home</a></li>
+                            <li class="tmp-breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
                             <li class="icon"><i class="fa-solid fa-angle-right"></i></li>
                             <li class="tmp-breadcrumb-item active">Project Details</li>
                         </ul>
@@ -27,51 +27,31 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="project-details-thumnail-wrap">
-                        <img src="{% static 'images/projects-details/thumnail-img.png' %}" alt="thumbnail">
+                        <img src="{{ project.banner_image.url }}" alt="thumbnail">
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <div class="project-details-content-wrap">
-                        <h2 class="title"></h2>
-                        <p class="docs">Self Hosted Mini Media Server is a lightweight, self-hosted media management solution built with Python and FastAPI. It empowers users to host, organize, and share media files directly from their local machine. With a user-friendly web interface, users can browse media categories, generate direct links for sharing, and manage content efficiently.</p>
-                        <p class="docs">The project leverages modern web technologies to ensure seamless media browsing and efficient organization of content, while providing a simple, yet powerful, local server alternative for media sharing.</p>
-                
-                        <div class="check-box-wrap">
-                            <ul>
-                                <li>
-                                    <h4 class="check-box-item"><span><i class="fa-solid fa-circle-check"></i></span>Self-Hosted Media Management</h4>
-                                </li>
-                                <li>
-                                    <h4 class="check-box-item"><span><i class="fa-solid fa-circle-check"></i></span>Category Organization</h4>
-                                </li>
-                                <li>
-                                    <h4 class="check-box-item"><span><i class="fa-solid fa-circle-check"></i></span>Direct Link Generation</h4>
-                                </li>
-                            </ul>
-                        </div>
+                        <h2 class="title">{{ project.title }}</h2>
+                        {{ project.description|safe }}
                         <div class="video">
                             <h2 class="mini-title">Video Presentation</h2>
                             <video width="620" controls>
-                                <source src="https://r2.fivemanage.com/fLDqvqit9C2o59RF2COxN/video/1MinuteRelaxingMusic-PeacefulAmbient-StressRelief-NatureBackground-Meditation.mp4" type="video/mp4">
+                                <source src="{{ project.video_url }}" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
-                        </div>               
-                        <h2 class="mini-title">Key Features of Self Hosted Mini Media Server</h2>
-                        <p class="docs">Efficient media management and sharing with a responsive web interface. Organize your media in structured categories such as Foods, Inventory, and more. Generate direct links for easy sharing.</p>
-                
+                        </div>            
+                        {{ project.small_description|safe }}
                         <div class="project-details-swiper-wrapper">
                             <div class="swiper project-details-swiper">
                                 <div class="swiper-wrapper">
+                                    {% for image in projectimages %}
                                     <div class="swiper-slide">
                                         <div class="project-details-img">
-                                            <img src="{% static 'images/projects-details/media-server-img-1.jpg' %}" alt="media-server-img">
+                                            <img src="{{ image.image.url }}" alt="media-server-img">
                                         </div>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="project-details-img">
-                                            <img src="{% static 'images/projects-details/media-server-img-2.jpg' %}" alt="media-server-img">
-                                        </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
                             </div>
                             <div class="project-details-swiper-btn">

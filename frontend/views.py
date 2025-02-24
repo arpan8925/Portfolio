@@ -11,13 +11,19 @@ def index(request):
 
 def project_details(request, slug):
     project = get_object_or_404(Project, slug=slug)
+    ProjectImages = project.carousel_images.all()
     context = {
-        'project': project
+        'project': project,
+        'projectimages': ProjectImages
     }
     return render(request,'project-details.html', context)
 
 def projects(request):
-    return render(request,'project.html')
+    projects = Project.objects.all()
+    context = {
+        'projects': projects
+    }
+    return render(request,'project.html', context)
 
 def contact(request):
     return render(request,'contact.html')
